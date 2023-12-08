@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>Varijable</title>
+</head>
+<body>
+	<script type="text/javascript">
+	const tempDay = ['2023-11-29', -1, 0, -0.5,0.5, 0, 1.2,1.8,2, 3, 4, 6, 9, 12, 7, 6, 6,8,5,4,2,3,2,1,0];
+	min = tempDay[1];
+	max = min;
+	for(i = 1; i < tempDay.length; i++){
+		if(min > tempDay[i])min = tempDay[i];
+		if(max < tempDay[i])max = tempDay[i];
+	}
+	console.log('Za datum ' + tempDay[0] + ' minimalna temp je bila ' + min + ', a maksimalna ' + max);
+
+	
+	</script>
+</body>
+</html>

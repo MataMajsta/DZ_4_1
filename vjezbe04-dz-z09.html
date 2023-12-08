@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>Varijable</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function provjera(broj){
+		sum = 0;
+		for(j = 1; j < broj; j++)
+			if((broj % j) == 0)sum += j;
+			
+		if(sum == broj)return true;
+		return false;
+	}
+	var x = 1000;
+	for(i = 1; i < x; i++)
+		if(provjera(i))document.write('Pronadjen savrsen broj: ' + i + '!<br/>');
+	
+	
+	</script>
+</body>
+</html>

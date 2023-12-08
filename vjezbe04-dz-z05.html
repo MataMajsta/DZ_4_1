@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>Varijable</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var osoba = new Array();
+	osoba[0] = {
+		firstName:"Marko",
+		lastName:"Maric",
+		age:40,
+		eyeColor:"Black",
+	};
+	osoba[1] = {
+		firstName:"Lukas",
+		lastName:"Lukic",
+		age:19,
+		eyeColor:"Brown",
+	};
+	osoba[2] = {
+		firstName:"Stipe",
+		lastName:"Stipancic",
+		age:52,
+		eyeColor:"Blue",
+	};
+	for(i = 0; i < 3; i++)
+		document.write('Osoba pod indeksom ' + i + ':' + osoba[i].firstName + ' ' + osoba[i].lastName + ', godina: ' + osoba[i].age + ', boja ociju: ' + osoba[i].eyeColor + '<br/>');
+	
+	
+	</script>
+</body>
+</html>
