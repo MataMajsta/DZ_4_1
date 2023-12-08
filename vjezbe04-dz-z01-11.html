@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>Varijable</title>
+</head>
+<body>
+ <script type="text/javascript">
+	var Broj = 19;
+	var Niz1 = 'Niz znakova';
+	var Niz2= '3.14';
+	var Niz3 = 'U dva<br/>retka';
+	var Logicka = true;
+	document.write(Broj + '<br/>');
+	document.write(Niz1 + '<br/>');
+	document.write(Niz2 + '<br/>');
+	document.write(Niz3 + '<br/>');
+	document.write(Logicka + '<br/>');
+	Logicka = false;
+	document.write(Logicka + '<br/>');
+	document.write('-------------------------<br/>');
+	
+	for(i = 1; i <= 100; i++){
+		if((i%2) == 0)console.log('Kvadrat od ' + i + ' je ' + (i*i));
+	}
+	
+	document.write('Prosti brojevi od 1 do 1000: <br/>');
+	for(i = 2; i < 1000; i++){
+		kontrola = true;
+		for(j = (i-1); j > 1; j--)
+			if((i % j) == 0)kontrola = false;
+		if(kontrola){
+			console.log('Prost broj: ' + i);
+			document.write(i + '<br/>');
+		}
+	}
+	document.write('-------------------------<br/>');
+	
+	polje = new Array(1,2,3,4,7,8,5,6,9,55,12,4,85);
+	document.write('Pocetna duzina niza je: ' + polje.length + '<br/>');
+	var pom;
+	for(i = 0; i < (polje.length-1); i++)
+		for(j = (i+1); j < polje.length; j++)
+			if(polje[i] < polje[j]){
+				pom = polje[i];
+				polje[i] = polje[j];
+				polje[j] = pom;
+			}
+	document.write(polje + '<br/>');
+	for(i = 0; i < (polje.length-1); i++)
+		for(j = (i+1); j < polje.length; j++)
+			if(polje[i] > polje[j]){
+				pom = polje[i];
+				polje[i] = polje[j];
+				polje[j] = pom;
+			}
+	document.write(polje + '<br/>');
+	polje.pop();
+	polje[polje.length] = 19;
+	polje[polje.length] = 22;
+	polje2 = new Array("Banana", "Orange", "Apple", "Mango");
+	polje_final = new Array(polje, polje2);
+	document.write(polje_final + '<br/>');
+	document.write('-------------------------<br/>');
+	var osoba = new Array();
+	osoba[0] = {
+		firstName:"Marko",
+		lastName:"Maric",
+		age:40,
+		eyeColor:"Black",
+	};
+	osoba[1] = {
+		firstName:"Lukas",
+		lastName:"Lukic",
+		age:19,
+		eyeColor:"Brown",
+	};
+	osoba[2] = {
+		firstName:"Stipe",
+		lastName:"Stipancic",
+		age:52,
+		eyeColor:"Blue",
+	};
+	for(i = 0; i < 3; i++)
+		document.write('Osoba pod indeksom ' + i + ':' + osoba[i].firstName + ' ' + osoba[i].lastName + ', godina: ' + osoba[i].age + ', boja ociju: ' + osoba[i].eyeColor + '<br/>');
+	document.write('-------------------------<br/>');
+	
+	var pas = {
+		ime:'Reks',
+		godina:2,
+	};
+	pas.zvuk = function(){
+		console.log(pas.ime + " kaze AV AV!");
+	}
+	pas.zvuk();
+	
+	console.log('Zadatak broj 7:');
+	var x = function(broj){
+		if(typeof(broj) == "number")return (broj*broj);
+		else return ("Greska, pogresan unos!");
+	}
+	console.log(x(15));
+	console.log(x('15'));
+	
+	var arr = ['Ovo', 'je', 'My', 'prvi', 'komad', 'OF', 'JAVASCRIPT', 'koda', 'Koji', 'je', 'proradio'];
+	function provjera(rijec){
+		for(j = 0; j < rijec.length; j++)
+			if(rijec[j] == rijec[j].toUpperCase())return true;
+		return false;
+	}
+	for(i = 0; i < arr.length; i++)
+		if((arr[i].length >= 5) || (provjera(arr[i])))document.write(arr[i] + '<br/>');
+	document.write('-------------------------<br/>');
+	
+	function provjera(broj){
+		sum = 0;
+		for(j = 1; j < broj; j++)
+			if((broj % j) == 0)sum += j;
+			
+		if(sum == broj)return true;
+		return false;
+	}
+	var x = 1000;
+	for(i = 1; i < x; i++)
+		if(provjera(i))document.write('Pronadjen savrsen broj: ' + i + '!<br/>');
+	document.write('-------------------------<br/>');
+	
+	document.write('5 random brojeva izmedju ' + x + ' i ' + y + ': <br/>');
+	var x = 15;
+	var y = 38;
+	for(i = 0; i < 5; i++)
+		document.write((Math.floor(Math.random()*(y-x+1)) + x) + '<br/>');
+	
+	const tempDay = ['2023-11-29', -1, 0, -0.5,0.5, 0, 1.2,1.8,2, 3, 4, 6, 9, 12, 7, 6, 6,8,5,4,2,3,2,1,0];
+	min = tempDay[1];
+	max = min;
+	for(i = 1; i < tempDay.length; i++){
+		if(min > tempDay[i])min = tempDay[i];
+		if(max < tempDay[i])max = tempDay[i];
+	}
+	console.log('Za datum ' + tempDay[0] + ' minimalna temp je bila ' + min + ', a maksimalna ' + max);
+</script>
+</body>
+</html>
